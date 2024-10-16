@@ -43,8 +43,14 @@ export default defineConfig({
             type: "string",
             name: "title",
             label: "Title",
-            isTitle: true,
             required: true,
+          },
+          {
+            type: "string",
+            name: "slug",
+            label: "Slug",
+            required: true,
+            isTitle: true,
           },
           {
             type: "rich-text",
