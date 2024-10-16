@@ -13,10 +13,13 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "generate-queries": "node ./utils/generate-queries.js",
+    "update-config": "node ./utils/update-tina-config.js",
+    "dev": "npm run update-config -- false && npm run tina-build-local && npm run generate-queries && npm run update-config -- true && tinacms dev -c \"gatsby develop\"",
+    "tina-build-local": "tinacms build --local || exit 0"
   },
   "dependencies": {
-    "@mdx-js/react": "^3.0.1",
     "gatsby": "^5.13.7",
     "gatsby-plugin-mdx": "^5.13.1",
     "gatsby-source-filesystem": "^5.13.1",
