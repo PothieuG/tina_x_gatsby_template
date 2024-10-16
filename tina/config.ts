@@ -9,7 +9,7 @@ const branch =
 
 export default defineConfig({
   branch,
-
+  client: { skip: true },
   // Get this from tina.io
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
   // Get this from tina.io
@@ -17,12 +17,12 @@ export default defineConfig({
 
   build: {
     outputFolder: "admin",
-    publicFolder: "public",
+    publicFolder: "static",
   },
   media: {
     tina: {
       mediaRoot: "",
-      publicFolder: "public",
+      publicFolder: "static",
     },
   },
   // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/schema/
@@ -32,6 +32,12 @@ export default defineConfig({
         name: "post",
         label: "Posts",
         path: "content/posts",
+        format: 'mdx',
+        ui: {
+          router: ({ document }: { document: { _sys: { template: string; filename: string } } }) => {
+            return `/${document._sys.template}/${document._sys.filename}`;
+          },
+        },
         fields: [
           {
             type: "string",
