@@ -17,7 +17,8 @@
     "generate-queries": "node ./utils/generate-queries.js",
     "update-config": "node ./utils/update-tina-config.js",
     "dev": "npm run update-config -- false && npm run tina-build-local && npm run generate-queries && npm run update-config -- true && tinacms dev -c \"gatsby develop\"",
-    "tina-build-local": "tinacms build --local || exit 0"
+    "tina-build-local": "tinacms build --local || exit 0",
+    "tina-dev": "tinacms dev -c \"node ./utils/generateGQL.js && gatsby develop\""
   },
   "dependencies": {
     "gatsby": "^5.13.7",
@@ -29,6 +30,7 @@
   },
   "devDependencies": {
     "@tinacms/cli": "^1.6.9",
+    "@types/express": "^5.0.0",
     "@types/node": "^22.7.5",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
