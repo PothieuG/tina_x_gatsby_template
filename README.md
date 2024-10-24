@@ -1,4 +1,4 @@
-# Tinasby
+# Tina x Gatsby - Template
 
 If you would like to use TinaCMS and its live editing features on top of Gatsby, you can follow the documentation below. Each step corresponds to a commit you can follow along.
 
