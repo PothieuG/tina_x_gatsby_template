@@ -10,7 +10,7 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "build": "npm run update-config -- false && npm run tina-build-local && npm run generate-queries && npm run update-config -- true && gatsby build",
+    "build": "npm run update-config -- false && npm run tina-build-local && npm run generate-queries && npm run update-config -- true && npm run tina-build-local -c \"gatsby develop\"",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
