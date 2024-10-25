@@ -2,6 +2,7 @@
 for = "/*"
   [headers.values]
   X-Frame-Options = "SAMEORIGIN"
+  Content-Security-Policy = "frame-ancestors 'self'"
 
 [[headers]]
 for = "/admin/*"
