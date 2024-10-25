@@ -7,5 +7,5 @@ for = "/*"
 [[headers]]
 for = "/admin/*"
   [headers.values]
-  X-Frame-Options = "SAMEORIGIN"
-  Content-Security-Policy = "frame-ancestors 'self'"
+  Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; frame-ancestors 'self';"
+
